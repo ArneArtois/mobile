@@ -1,6 +1,5 @@
-package killerapp.repo
+package killerapp.db
 
-import TextFileDao
 import androidx.lifecycle.LiveData
 import killerapp.db.TextFile
 

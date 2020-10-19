@@ -1,6 +1,5 @@
 package killerapp.db
 
-import TextFileDao
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
@@ -11,12 +10,11 @@ import kotlinx.coroutines.CoroutineScope
 
 @Database(entities = [TextFile::class], version = 1, exportSchema = false)
 abstract class TextFileDatabase : RoomDatabase() {
-K
-    abstract fun fileDao(): TextFileDao
+    abstract fun fileDao(): TextFileDao;
 
     companion object {
         @Volatile
-        private var INSTANCE: TextFileDatabase? = null
+        private var INSTANCE: TextFileDatabase ?= null
 
         fun getDatabase(context: Context, scope: CoroutineScope): TextFileDatabase {
             // if the INSTANCE is not null, then return it,

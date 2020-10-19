@@ -6,9 +6,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
 import killerapp.db.TextFile
 import killerapp.db.TextFileDatabase
+import killerapp.db.TextFileRepo
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import killerapp.repo.TextFileRepo
 
 class TextFileViewModel(application: Application) : AndroidViewModel(application) {
 
