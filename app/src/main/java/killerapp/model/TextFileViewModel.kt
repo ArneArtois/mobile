@@ -31,4 +31,7 @@ class TextFileViewModel(application: Application) : AndroidViewModel(application
     fun insert(textFile: TextFile) = viewModelScope.launch(Dispatchers.IO) {
         repository.insert(textFile)
     }
+    fun removeAll() = viewModelScope.launch(Dispatchers.IO){
+        repository.deleteAll()
+    }
 }

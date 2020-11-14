@@ -16,5 +16,8 @@ class TextFileRepo(private val textfileDao: TextFileDao) {
     suspend fun insert(textFile: TextFile) {
         textfileDao.insert(textFile);
     }
+    suspend fun deleteAll(){
+        textfileDao.deleteAll()
+    }
 }
 

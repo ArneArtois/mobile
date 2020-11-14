@@ -4,10 +4,12 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CheckBox
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kill2.R
 import killerapp.db.TextFile
+import kotlinx.android.synthetic.main.remove_item.view.*
 
 
 class RemoveListAdapter internal constructor(
@@ -29,6 +31,8 @@ class RemoveListAdapter internal constructor(
     override fun onBindViewHolder(holder: TextFileViewHolder, position: Int) {
         val current = textFiles[position]
         holder.wordItemView.text = current.message
+
+       
     }
 
     internal fun setTextFiles(words: List<TextFile>) {

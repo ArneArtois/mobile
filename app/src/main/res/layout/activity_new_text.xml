@@ -18,10 +18,11 @@
         android:layout_margin="@dimen/big_padding"
         android:fontFamily="sans-serif-light"
         android:hint="@string/hint_text"
-        android:inputType="textAutoComplete"
+        android:inputType="textMultiLine"
         android:minHeight="@dimen/min_height"
         android:textSize="18sp"
         android:autofillHints="" />
+
 
     <Button
         android:id="@+id/button_save"
