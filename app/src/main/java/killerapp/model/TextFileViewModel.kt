@@ -1,4 +1,4 @@
-package killerapp.viewmodel
+package killerapp.model
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel

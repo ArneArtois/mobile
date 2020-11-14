@@ -15,12 +15,13 @@
         android:id="@+id/edit_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:minHeight="@dimen/min_height"
+        android:layout_margin="@dimen/big_padding"
         android:fontFamily="sans-serif-light"
         android:hint="@string/hint_text"
         android:inputType="textAutoComplete"
-        android:layout_margin="@dimen/big_padding"
-        android:textSize="18sp" />
+        android:minHeight="@dimen/min_height"
+        android:textSize="18sp"
+        android:autofillHints="" />
 
     <Button
         android:id="@+id/button_save"

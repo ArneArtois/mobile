@@ -12,12 +12,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.kill2.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import killerapp.db.TextFile
-import killerapp.db.TextFileListAdapter
-import killerapp.viewmodel.TextFileViewModel
-import org.w3c.dom.Text
+import killerapp.xadapter.TextFileListAdapter
+import killerapp.model.TextFileViewModel
 
 class MainActivity : AppCompatActivity() {
     private val newTextActivityRequestCode = 1
+    private val newRemoveActivityRequestCode = 1
     private lateinit var textViewModel: TextFileViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,6 +37,11 @@ class MainActivity : AppCompatActivity() {
         fab.setOnClickListener {
             val intent = Intent(this@MainActivity, NewTextActivity::class.java)
             startActivityForResult(intent, newTextActivityRequestCode)
+        }
+        val fab3 = findViewById<FloatingActionButton>(R.id.fab3)
+        fab3.setOnClickListener {
+            val intent = Intent(this@MainActivity, NewRemoveActivity::class.java)
+            startActivityForResult(intent, newRemoveActivityRequestCode)
         }
     }
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

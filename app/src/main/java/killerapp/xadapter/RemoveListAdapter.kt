@@ -1,4 +1,4 @@
-package killerapp.db
+package killerapp.xadapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,11 +7,12 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kill2.R
+import killerapp.db.TextFile
 
 
-class TextFileListAdapter internal constructor(
+class RemoveListAdapter internal constructor(
     context: Context
-) : RecyclerView.Adapter<TextFileListAdapter.TextFileViewHolder>() {
+) : RecyclerView.Adapter<RemoveListAdapter.TextFileViewHolder>() {
 
     private val inflater: LayoutInflater = LayoutInflater.from(context)
     private var textFiles = emptyList<TextFile>() // Cached copy of words
@@ -21,7 +22,7 @@ class TextFileListAdapter internal constructor(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TextFileViewHolder {
-        val itemView = inflater.inflate(R.layout.recyclerview_item, parent, false)
+        val itemView = inflater.inflate(R.layout.remove_item, parent, false)
         return TextFileViewHolder(itemView)
     }
 
@@ -36,4 +37,6 @@ class TextFileListAdapter internal constructor(
     }
 
     override fun getItemCount() = textFiles.size
+
+
 }

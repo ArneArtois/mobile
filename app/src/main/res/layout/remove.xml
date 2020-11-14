@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="killerapp.MainActivity">
+    tools:context="killerapp.NewRemoveActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerview"
+        android:id="@+id/remove_recyclerview"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:padding="@dimen/big_padding"
@@ -17,27 +17,18 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        tools:listitem="@layout/recyclerview_item">
+        tools:listitem="@layout/remove_item">
 
     </androidx.recyclerview.widget.RecyclerView>
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:src="@drawable/ic_baseline_add_box_24"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab3"
         android:layout_width="wrap_content"
         android:layout_height="56dp"
-        android:layout_marginEnd="90dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:src="#DC082F"
-        app:backgroundTint="#E61010"
+        android:src="@drawable/ic_baseline_add_box_24"
+        app:backgroundTint="@color/design_default_color_error"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
