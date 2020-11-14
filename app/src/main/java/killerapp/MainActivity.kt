@@ -14,6 +14,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import killerapp.db.TextFile
 import killerapp.xadapter.TextFileListAdapter
 import killerapp.model.TextFileViewModel
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     private val newTextActivityRequestCode = 1
@@ -57,6 +58,6 @@ class MainActivity : AppCompatActivity() {
                 applicationContext,
                 R.string.empty_not_saved,
                 Toast.LENGTH_LONG).show()
-        }
+            }
     }
 }
