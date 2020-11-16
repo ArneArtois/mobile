@@ -50,7 +50,7 @@ class MainActivity : AppCompatActivity() {
 
         if (requestCode == newTextActivityRequestCode && resultCode == Activity.RESULT_OK) {
             data?.getStringExtra(NewTextActivity.EXTRA_REPLY)?.let {
-                val text = TextFile(message=it)
+                val text = TextFile(message=it, isSelected = false)
                 textViewModel.insert(text)
             }
         } else {

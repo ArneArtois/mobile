@@ -34,4 +34,7 @@ class TextFileViewModel(application: Application) : AndroidViewModel(application
     fun removeAll() = viewModelScope.launch(Dispatchers.IO){
         repository.deleteAll()
     }
+    fun deletebyids(intArray: IntArray) = viewModelScope.launch(Dispatchers.IO){
+        repository.deletebyids(intArray = intArray)
+    }
 }

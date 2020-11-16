@@ -33,6 +33,13 @@ interface TextFileDao {
     @Delete
     suspend fun delete(file: TextFile)
 
+    /**
+     * Delete specific file
+     */
+    @Query("DELETE FROM text_table WHERE id IN (:Ids)")
+    fun deletebyids(Ids: IntArray);
+
+
 
     //BASED ON QUERY EXAMPLES IN ANDROID ROOM DOC
     //insert, getAll, delete

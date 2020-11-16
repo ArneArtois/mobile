@@ -19,5 +19,8 @@ class TextFileRepo(private val textfileDao: TextFileDao) {
     suspend fun deleteAll(){
         textfileDao.deleteAll()
     }
+    suspend fun deletebyids(intArray: IntArray){
+        textfileDao.deletebyids(intArray)
+    }
 }
 
