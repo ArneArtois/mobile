@@ -36,8 +36,14 @@ interface TextFileDao {
     /**
      * Delete specific file
      */
+    @Query("DELETE FROM text_table WHERE isSelected = 'true'")
+    fun deleteSelected();
+
+    /**
+     * Delete specific file
+     */
     @Query("DELETE FROM text_table WHERE id IN (:Ids)")
-    fun deletebyids(Ids: IntArray);
+    fun deleteById(Ids: ArrayList<Int>);
 
 
 

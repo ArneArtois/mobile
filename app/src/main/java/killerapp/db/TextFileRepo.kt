@@ -1,7 +1,6 @@
 package killerapp.db
 
 import androidx.lifecycle.LiveData
-import killerapp.db.TextFile
 
 // Declares the DAO as a private property in the constructor. Pass in the DAO
 // instead of the whole database, because you only need access to the DAO
@@ -19,8 +18,11 @@ class TextFileRepo(private val textfileDao: TextFileDao) {
     suspend fun deleteAll(){
         textfileDao.deleteAll()
     }
-    suspend fun deletebyids(intArray: IntArray){
-        textfileDao.deletebyids(intArray)
+    suspend fun deleteSelected(){
+        textfileDao.deleteSelected()
+    }
+    suspend fun deleteByIds(arrayList: ArrayList<Int>){
+        textfileDao.deleteById(arrayList)
     }
 }
 

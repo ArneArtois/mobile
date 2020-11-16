@@ -1,9 +1,7 @@
 package killerapp
 
-import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -12,10 +10,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.kill2.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import killerapp.db.TextFile
-import killerapp.xadapter.TextFileListAdapter
 import killerapp.model.TextFileViewModel
 import killerapp.xadapter.RemoveListAdapter
-import kotlinx.android.synthetic.main.remove_item.*
 
 class NewRemoveActivity : AppCompatActivity() {
     private lateinit var textViewModel: TextFileViewModel
@@ -37,14 +33,24 @@ class NewRemoveActivity : AppCompatActivity() {
         })
         val fab3 = findViewById<FloatingActionButton>(R.id.fab3)
         fab3.setOnClickListener {
-            textViewModel.removeAll()
             val intent = Intent(this@NewRemoveActivity, this::class.java)
+            val removelist: java.util.ArrayList<TextFile> = ArrayList()
+            val intlist: ArrayList<Int> = ArrayList()
+            removelist.addAll(adapter.getTextFiles())
+            for(t in removelist){
+                if(t.isSelected == true)
+                {
+                    intlist.add(t.id!!)
+                }
+            }
+            textViewModel.deleteByIds(intlist)
             finish()
         }
 
         }
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
+        println("delete")
 
     }
 }

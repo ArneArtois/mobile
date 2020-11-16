@@ -38,7 +38,7 @@ class RemoveListAdapter internal constructor(
         holder.wordItemView.text = current.message
 
         val c = textFiles.get(position);
-        holder.cbSelect.setOnCheckedChangeListener(null);
+//        holder.cbSelect.setOnCheckedChangeListener(null);
         holder.cbSelect.setChecked(c.isSelected)
 
         holder.cbSelect.setOnCheckedChangeListener(CompoundButton.OnCheckedChangeListener{ _, _ ->
@@ -47,12 +47,16 @@ class RemoveListAdapter internal constructor(
         })
     }
 
+
     internal fun setTextFiles(textFiles: List<TextFile>) {
         this.textFiles = textFiles
         notifyDataSetChanged()
     }
 
     override fun getItemCount() = textFiles.size
+    internal fun getTextFiles(): List<TextFile> {
+        return this.textFiles
+    }
 
 
 }
