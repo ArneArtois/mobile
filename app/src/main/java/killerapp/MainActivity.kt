@@ -54,9 +54,11 @@ class MainActivity : AppCompatActivity() {
                 textViewModel.insert(text)
             }
         } else {
+            val text = ""
             Toast.makeText(
                 applicationContext,
-                R.string.empty_not_saved,
+                text,
+//                R.string.empty_not_saved,
                 Toast.LENGTH_LONG).show()
             }
     }

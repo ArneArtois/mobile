@@ -17,7 +17,7 @@ class RemoveListAdapter internal constructor(
 ) : RecyclerView.Adapter<RemoveListAdapter.TextFileViewHolder>() {
 
     private val inflater: LayoutInflater = LayoutInflater.from(context)
-    private var textFiles = emptyList<TextFile>() // Cached copy of words
+    private var textFiles = emptyList<TextFile>() // Cached copy of text
 
     inner class TextFileViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val wordItemView: TextView = itemView.findViewById(R.id.textView)
@@ -35,8 +35,8 @@ class RemoveListAdapter internal constructor(
        
     }
 
-    internal fun setTextFiles(words: List<TextFile>) {
-        this.textFiles = words
+    internal fun setTextFiles(textFiles: List<TextFile>) {
+        this.textFiles = textFiles
         notifyDataSetChanged()
     }
 
