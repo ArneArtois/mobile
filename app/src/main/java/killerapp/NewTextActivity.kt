@@ -24,8 +24,8 @@ class NewTextActivity : AppCompatActivity() {
             if (TextUtils.isEmpty(editTextView.text)) {
                 setResult(Activity.RESULT_CANCELED, replyIntent)
             } else {
-                val word = editTextView.text.toString()
-                replyIntent.putExtra(EXTRA_REPLY, word)
+                val text = editTextView.text.toString()
+                replyIntent.putExtra(EXTRA_REPLY, text)
                 setResult(Activity.RESULT_OK, replyIntent)
             }
             finish()

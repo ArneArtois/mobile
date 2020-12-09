@@ -37,20 +37,13 @@ class NewRemoveActivity : AppCompatActivity() {
             val removelist: java.util.ArrayList<TextFile> = ArrayList()
             val intlist: ArrayList<Int> = ArrayList()
             removelist.addAll(adapter.getTextFiles())
-            for(t in removelist){
-                if(t.isSelected == true)
-                {
+            for (t in removelist) {
+                if (t.isSelected == true) {
                     intlist.add(t.id!!)
                 }
             }
             textViewModel.deleteByIds(intlist)
             finish()
         }
-
-        }
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        println("delete")
-
     }
 }
